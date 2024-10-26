@@ -26,7 +26,10 @@ export default function AttendanceEditClient({
   return (
     <>
       <Link href={"/"}>
-        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded mb-4">
+        <button
+          aria-label="Go back to the Home page"
+          className="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded mb-4"
+        >
           Back to Home
         </button>
       </Link>

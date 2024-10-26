@@ -5,8 +5,8 @@ export default async function EditAttendance() {
   const initialData = await getAllInfo();
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#d4e6f1]">
+    <main className="flex flex-col justify-center items-center min-h-screen bg-[#d4e6f1]">
       <AttendanceEditClient initialData={initialData} />
-    </div>
+    </main>
   );
 }

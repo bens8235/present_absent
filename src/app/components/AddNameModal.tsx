@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addNewName } from "../lib/serverActions";
 
 export default function AddNameModal() {
@@ -23,11 +23,30 @@ export default function AddNameModal() {
     setIsOpen(false);
   };
 
+  // Handle Escape key to close the modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("keydown", handleEscape);
+    } else {
+      window.removeEventListener("keydown", handleEscape);
+    }
+
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isOpen]);
+
   return (
     <div>
       <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         onClick={() => setIsOpen(true)}
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
       >
         Add New Name
       </button>
@@ -39,6 +58,9 @@ export default function AddNameModal() {
         >
           <div
             className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-lg font-bold mb-4">Add New Name</h2>

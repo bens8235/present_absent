@@ -25,7 +25,20 @@ export default function AttendanceList({
               className={`flex-1 text-right mr-8 ${
                 onToggle ? "cursor-pointer" : ""
               }`}
+              role={onToggle ? "button" : undefined}
+              tabIndex={onToggle ? 0 : undefined}
+              aria-pressed={
+                onToggle ? (item.present ? "true" : "false") : undefined
+              }
+              aria-label={
+                onToggle ? `Toggle attendance for ${item.name}` : undefined
+              }
               onClick={() => onToggle && onToggle(index)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onToggle && onToggle(index);
+                }
+              }}
             >
               {item.present ? (
                 <span className="text-green-500 text-2xl">✓</span> // Green Tick for Yes
