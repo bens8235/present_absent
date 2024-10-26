@@ -28,9 +28,9 @@ export default function AttendanceList({
               onClick={() => onToggle && onToggle(index)}
             >
               {item.present ? (
-                <span className="text-green-500">✓</span> // Green Tick for Yes
+                <span className="text-green-500 text-2xl">✓</span> // Green Tick for Yes
               ) : (
-                <span className="text-red-500">✗</span> // Red Cross for No
+                <span className="text-red-500 text-2xl">✗</span> // Red Cross for No
               )}
             </div>
           </div>
