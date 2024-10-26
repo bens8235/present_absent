@@ -12,3 +12,7 @@ export interface AttendanceListProps {
   data: AttendanceItem[];
   onToggle?: (index: number) => void;
 }
+
+export interface AttendanceEditProps {
+  initialData: AttendanceItem[];
+}

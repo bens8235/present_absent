@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { AttendanceListProps } from "../../../types";
+import { AttendanceListProps } from "../../../interfaces";
 
 // Define the component using `export default function`
 export default function AttendanceList({
