@@ -33,10 +33,14 @@ export default function AttendanceList({
               aria-label={
                 onToggle ? `Toggle attendance for ${item.name}` : undefined
               }
-              onClick={() => onToggle && onToggle(index)}
+              onClick={() => {
+                if (onToggle) {
+                  onToggle(index);
+                }
+              }}
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  onToggle && onToggle(index);
+                if (e.key === "Enter" && onToggle) {
+                  onToggle(index);
                 }
               }}
             >
