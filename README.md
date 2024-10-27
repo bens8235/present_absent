@@ -10,4 +10,5 @@ Some changes I would make if I spent more time on this project:
 4. Add the ability to delete names, including a button that displays all names with a delete checkbox for bulk deletion or similar functionality.
 5. Expand testing to cover additional components.
 6. Improve accessibility by making ARIA attributes more comprehensive and adding better keyboard navigation and other enhancements.
-7. Improve ease of use & appearance on mobile devices and when using dark mode. 
+7. Improve ease of use & appearance on mobile devices and when using dark mode.
+8. Don't allow user to click add new name more than once to avoid adding two additions.
