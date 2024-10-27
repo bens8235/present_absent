@@ -1,36 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Project Overview**
 
-## Getting Started
+I chose to store names and attendance status in Supabase to persist changes. All pages are server-side rendered to improve SEO and ensure data is preloaded. Components are client-side to enable greater functionality and flexibility. I also decided to keep server-side asynchronous functions in a dedicated library, allowing them to be reused in client components. Additionally, I created a TypeScript interfaces file for reusability.
 
-First, run the development server:
+Some changes I would make if I spent more time on this project:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Implement authentication to ensure users can only edit their own data.
+2. Update status using a unique ID instead of names to avoid conflicts with duplicate names.
+3. Fetch database data in the layout to pass it to pages, minimizing redundant database calls.
+4. Add the ability to delete names, including a button that displays all names with a delete checkbox for bulk deletion or similar functionality.
+5. Expand testing to cover additional components.
+6. Improve accessibility by making ARIA attributes more comprehensive and adding better keyboard navigation and other enhancements.
