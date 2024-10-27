@@ -17,4 +17,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  color: #2a2a2a;
 }

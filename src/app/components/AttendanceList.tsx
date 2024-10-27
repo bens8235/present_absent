@@ -10,7 +10,15 @@ export default function AttendanceList({
   return (
     <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
       <h1 className="text-center font-bold text-lg mb-6">
-        {onToggle ? "Edit by Clicking on Icon" : "Attendance List"}
+        {onToggle ? (
+          <>
+            Change Attendance by Clicking on{" "}
+            <span className="text-green-500 text-2xl">✓</span> or{" "}
+            <span className="text-red-500 text-2xl">✗</span>
+          </>
+        ) : (
+          "Attendance List"
+        )}
       </h1>
       <div className="flex font-bold border-b-2 pb-2 mb-4">
         <div className="flex-1 text-left ml-8">Name</div>
