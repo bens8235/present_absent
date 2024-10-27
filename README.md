@@ -2,8 +2,6 @@
 
 I chose to store names and attendance status in Supabase to persist changes. All pages are server-side rendered to improve SEO and ensure data is preloaded. Components are client-side to enable greater functionality and flexibility. I also decided to keep server-side asynchronous functions in a dedicated library, allowing them to be reused in client components. Additionally, I created a TypeScript interfaces file for reusability.
 
-Originally I didn't use revalidate path method in server actions and managed local state between components but wouldn't work on Vercel doing that so switched it.
-
 Some changes I would make if I spent more time on this project:
 
 1. Implement authentication to ensure users can only edit their own data.
