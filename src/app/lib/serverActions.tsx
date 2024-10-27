@@ -1,11 +1,11 @@
 "use server";
 import { db } from "./db";
-import { PresentAbsent } from "../../../interfaces";
+import { AttendanceItem } from "../../../interfaces";
 import { revalidatePath } from "next/cache";
 
-export async function getAllInfo(): Promise<PresentAbsent[]> {
+export async function getAllInfo(): Promise<AttendanceItem[]> {
   const info = await db.query(`SELECT * from present_absent ORDER BY name ASC`);
-  return info.rows as PresentAbsent[];
+  return info.rows as AttendanceItem[];
 }
 
 export async function toggleAttendance(name: string): Promise<void> {

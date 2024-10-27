@@ -12,6 +12,7 @@ export default function AttendanceEditClient({
     useState<AttendanceItem[]>(initialData);
 
   const handleToggle = async (index: number) => {
+    // Made a copy of array so React knows there is an update and re-renders
     const updatedData = [...attendanceData];
     const name = updatedData[index].name;
 
@@ -33,6 +34,10 @@ export default function AttendanceEditClient({
           Back to Home
         </button>
       </Link>
+
+      {/* the component below is the same as the one in home page but only difference is passing onToggle. 
+      Needed to define the function at this level as the component then knows which page we are coming from for 
+      conditional rendering/functionality. Also passing local data state so don't need to refresh page. */}
 
       <AttendanceList data={attendanceData} onToggle={handleToggle} />
     </>

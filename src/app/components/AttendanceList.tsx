@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
+
 import { AttendanceListProps } from "../../../interfaces";
 
-// Define the component using `export default function`
 export default function AttendanceList({
   data,
   onToggle,
 }: AttendanceListProps) {
+  // Lots of checks on whether the toggle function passed as that is for the edit page so can toggle attendance
   return (
     <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
       <h1 className="text-center font-bold text-lg mb-6">
