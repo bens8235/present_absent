@@ -74,6 +74,7 @@ export default function AddNameModal() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
+            // prevents the modal closing when clicking on it
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-lg font-bold mb-4">Add New Name</h2>
