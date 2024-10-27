@@ -26,4 +26,5 @@ export async function addNewName(
     present,
   ]);
   revalidatePath("/");
+  revalidatePath("/EditAttendance");
 }
