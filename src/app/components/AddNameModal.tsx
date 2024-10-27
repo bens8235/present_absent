@@ -56,7 +56,7 @@ export default function AddNameModal() {
     <div>
       <ToastContainer hideProgressBar closeOnClick pauseOnHover draggable />
       <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 add-button"
         onClick={() => setIsOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={isOpen}
