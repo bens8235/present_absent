@@ -35,12 +35,12 @@ export default function AttendanceList({
               }
               onClick={() => {
                 if (onToggle) {
-                  onToggle(index);
+                  onToggle(item.name);
                 }
               }}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && onToggle) {
-                  onToggle(index);
+                  onToggle(item.name);
                 }
               }}
             >

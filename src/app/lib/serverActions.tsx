@@ -13,6 +13,8 @@ export async function toggleAttendance(name: string): Promise<void> {
     `UPDATE present_absent SET present = NOT present WHERE name = $1`,
     [name]
   );
+  revalidatePath("/");
+  revalidatePath("/EditAttendance");
 }
 
 export async function addNewName(

@@ -1,27 +1,16 @@
 "use client";
-import { useState } from "react";
+
 import { toggleAttendance } from "@/app/lib/serverActions";
 import AttendanceList from "@/app/components/AttendanceList";
 import Link from "next/link";
-import { AttendanceEditProps, AttendanceItem } from "../../../interfaces";
+import { AttendanceEditProps } from "../../../interfaces";
 
 export default function AttendanceEditClient({
   initialData,
 }: AttendanceEditProps) {
-  const [attendanceData, setAttendanceData] =
-    useState<AttendanceItem[]>(initialData);
-
-  const handleToggle = async (index: number) => {
-    // Made a copy of array so React knows there is an update and re-renders
-    const updatedData = [...attendanceData];
-    const name = updatedData[index].name;
-
+  const handleToggle = async (name: string) => {
     // Update the database
     await toggleAttendance(name);
-
-    // Update the local state
-    updatedData[index].present = !updatedData[index].present;
-    setAttendanceData(updatedData);
   };
 
   return (
@@ -39,7 +28,7 @@ export default function AttendanceEditClient({
       Needed to define the function at this level as the component then knows which page we are coming from for 
       conditional rendering/functionality. Also passing local data state so don't need to refresh page. */}
 
-      <AttendanceList data={attendanceData} onToggle={handleToggle} />
+      <AttendanceList data={initialData} onToggle={handleToggle} />
     </>
   );
 }
