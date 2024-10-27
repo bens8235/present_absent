@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { addNewName } from "../lib/serverActions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function AddNameModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +17,16 @@ export default function AddNameModal() {
       setName("");
       setIsPresent(false);
       setIsOpen(false);
+      toast.success("Name Added", {
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        icon: false,
+        autoClose: 2000,
+        style: { backgroundColor: "#3B82F6", color: "#fff" },
+      });
     }
   };
 
@@ -42,6 +54,7 @@ export default function AddNameModal() {
 
   return (
     <div>
+      <ToastContainer hideProgressBar closeOnClick pauseOnHover draggable />
       <button
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         onClick={() => setIsOpen(true)}
