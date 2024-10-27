@@ -40,6 +40,6 @@ describe("AttendanceList Component", () => {
 
     // Check if the onToggle function was called once
     expect(mockOnToggle).toHaveBeenCalledTimes(1);
-    expect(mockOnToggle).toHaveBeenCalledWith(0); // Check the index passed to the function
+    expect(mockOnToggle).toHaveBeenCalledWith("John Doe");
   });
 });
