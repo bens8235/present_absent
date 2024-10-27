@@ -12,7 +12,7 @@ export default function AttendanceList({
       <h1 className="text-center font-bold text-lg mb-6">
         {onToggle ? (
           <>
-            Change Attendance by Clicking on{" "}
+            Change Attendance by Clicking{" "}
             <span className="text-green-500 text-2xl">✓</span> or{" "}
             <span className="text-red-500 text-2xl">✗</span>
           </>
